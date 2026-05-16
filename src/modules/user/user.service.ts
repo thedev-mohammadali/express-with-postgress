@@ -1,6 +1,6 @@
 import { pool } from "../../db";
 import queryString from "../../db/queryStrings";
-import type { IUser } from "../../moduels/user/user.interface";
+import type { IUser } from "./user.interface";
 
 const { getAllUsersQuery, createUserQuery, getUserByIdQuery } = queryString;
 

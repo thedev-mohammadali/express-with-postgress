@@ -6,12 +6,12 @@ export const pool = new Pool({
   connectionString: config.connectionString,
 });
 
-const { createUserProfileQuery, createUserTableQuery } = queryString;
+const { createUserProfileTableQuery, createUserTableQuery } = queryString;
 
 export const initDB = async () => {
   try {
     await pool.query(createUserTableQuery);
-    await pool.query(createUserProfileQuery);
+    await pool.query(createUserProfileTableQuery);
 
     console.log("Database connected successfully");
   } catch (error) {

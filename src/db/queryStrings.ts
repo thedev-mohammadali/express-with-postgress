@@ -11,8 +11,8 @@ const createUserTableQuery = `
     )
 `;
 
-const createUserProfileQuery = `
-    CREATE TABLE IF NOT EXISTS profile(
+const createUserProfileTableQuery = `
+    CREATE TABLE IF NOT EXISTS profiles(
         id SERIAL PRIMARY KEY,
         user_id INT UNIQUE REFERENCES users(id) ON DELETE CASCADE,
         bio TEXT,
@@ -59,7 +59,7 @@ const updateUserByIdQuery = `
 
 const queryString = {
   createUserTableQuery,
-  createUserProfileQuery,
+  createUserProfileTableQuery,
   getAllUsersQuery,
   createUserQuery,
   getUserByIdQuery,
