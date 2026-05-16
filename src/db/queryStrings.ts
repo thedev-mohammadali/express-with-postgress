@@ -57,6 +57,17 @@ const updateUserByIdQuery = `
     RETURNING *
 `;
 
+const createProfileQuery = `
+    INSERT INTO profiles (user_id, bio, address, gender, phone)
+    VALUES($1, $2, $3, $4, $5)
+    RETURNING *
+`;
+
+const getUserProfileByIdQuery = `
+    SELECT * FROM profiles
+    WHERE user_id=$1
+`;
+
 const queryString = {
   createUserTableQuery,
   createUserProfileTableQuery,
@@ -65,6 +76,8 @@ const queryString = {
   getUserByIdQuery,
   deleteUserByIdQuery,
   updateUserByIdQuery,
+  createProfileQuery,
+  getUserProfileByIdQuery,
 };
 
 export default queryString;

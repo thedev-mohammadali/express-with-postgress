@@ -1,4 +1,5 @@
 import express, { type Application } from "express";
+import { profileRoute } from "./modules/profile/profile.route";
 import { userRoute } from "./modules/user/user.route";
 
 const app: Application = express();
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoute);
+app.use("/api/profiles", profileRoute);
 
 // app.get("/users", (req: Request<{}, {}, {}, Query>, res: Response) => {
 //   const queries = req.query;

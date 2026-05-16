@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { IUser } from "../../moduels/user/user.interface";
+import type { IUser } from "./user.interface";
 import { userService } from "./user.service";
 
 const { getAllUsersFromDB, createUserIntoDB } = userService;
@@ -27,7 +27,6 @@ const createUser = async (req: Request<{}, {}, IUser>, res: Response) => {
   } catch (error: any) {
     const errMsg =
       error.code === "23505" ? "Email already exists!" : error.message;
-    console.log(error);
     res.status(400).json({
       success: "false",
       message: errMsg,

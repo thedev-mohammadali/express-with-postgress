@@ -5,10 +5,3 @@ export interface IUser {
   age: number;
   is_active?: boolean;
 }
-
-export interface IProfile {
-  bio: string;
-  address: string;
-  phone: string;
-  gender: string;
-}
