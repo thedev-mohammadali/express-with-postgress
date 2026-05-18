@@ -1,4 +1,6 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import config from "../../config";
 import { pool } from "../../db";
 import queryString from "../../db/queryStrings";
 import type { ICredential, IUserDataResponse } from "./auth.interface";
@@ -24,7 +26,18 @@ const loginUserIntoDB = async (payload: ICredential) => {
     throw new Error("Invalid Credentials!");
   }
 
-  return [user.email, user.id];
+  const jwtPayload = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    is_active: user.is_active,
+  };
+
+  const accessToken = jwt.sign(jwtPayload, config.secret as string, {
+    expiresIn: "1d",
+  });
+
+  return { accessToken };
 };
 
 export const authService = {
