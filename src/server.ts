@@ -1,7 +1,8 @@
 import app from "./app";
+import config from "./config";
 import { initDB } from "./db";
 
-const PORT = 3000;
+const PORT = config.port;
 
 const main = () => {
   initDB();
