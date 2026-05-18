@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import { pool } from "../../db";
 import queryString from "../../db/queryStrings";
 import type { IUser } from "./user.interface";
@@ -6,7 +7,13 @@ const { getAllUsersQuery, createUserQuery, getUserByIdQuery } = queryString;
 
 const createUserIntoDB = async (payload: IUser) => {
   const { name, age, email, password } = payload;
-  return await pool.query(createUserQuery, [name, email, password, age]);
+
+  //Password Hashing using bcrypt
+  bcrypt.genSalt(10, function (err, salt) {
+    bcrypt.hash(password, salt, async function (err, hash) {
+      await pool.query(createUserQuery, [name, email, hash, age]);
+    });
+  });
 };
 
 const getAllUsersFromDB = async () => {

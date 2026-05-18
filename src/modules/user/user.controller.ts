@@ -18,11 +18,10 @@ const createUser = async (req: Request<{}, {}, IUser>, res: Response) => {
   const data = req.body;
 
   try {
-    const result = await createUserIntoDB(data);
+    await createUserIntoDB(data);
     res.json({
       success: "true",
       message: "User created successfully",
-      data: result.rows[0],
     });
   } catch (error: any) {
     const errMsg =
