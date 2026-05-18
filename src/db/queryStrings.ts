@@ -39,6 +39,11 @@ const getUserByIdQuery = `
     WHERE id=$1
 `;
 
+const getUserByEmailQuery = `
+    SELECT * FROM users
+    WHERE email=$1
+`;
+
 const deleteUserByIdQuery = `
     DELETE FROM users
     WHERE id=$1
@@ -74,6 +79,7 @@ const queryString = {
   getAllUsersQuery,
   createUserQuery,
   getUserByIdQuery,
+  getUserByEmailQuery,
   deleteUserByIdQuery,
   updateUserByIdQuery,
   createProfileQuery,
