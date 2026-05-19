@@ -3,9 +3,13 @@ import jwt from "jsonwebtoken";
 import config from "../config";
 import { pool } from "../db";
 import queryString from "../db/queryStrings";
-import type { IjwtDecoded } from "../modules/auth/auth.interface";
+import type {
+  IjwtDecoded,
+  IUserDataResponse,
+} from "../modules/auth/auth.interface";
+import type { Role } from "../types";
 
-const auth = () => {
+const auth = (...roles: Role[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       const token = req.headers.authorization;
@@ -24,7 +28,7 @@ const auth = () => {
         decoded.email,
       ]);
 
-      const user = userData.rows[0];
+      const user = userData.rows[0] as IUserDataResponse;
 
       if (userData.rowCount === 0) {
         return res.status(401).json({
@@ -37,6 +41,13 @@ const auth = () => {
         return res.status(403).json({
           success: false,
           message: "Access Forbidden!",
+        });
+      }
+
+      if (roles.length && !roles.includes(user.role)) {
+        res.status(403).json({
+          success: false,
+          message: "Unauthorize access!!",
         });
       }
 

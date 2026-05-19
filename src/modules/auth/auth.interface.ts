@@ -1,4 +1,5 @@
 import type { JwtPayload } from "jsonwebtoken";
+import type { Role } from "../../types";
 
 export interface ICredential {
   email: string;
@@ -12,6 +13,7 @@ export interface IUserDataResponse {
   password: string;
   is_active: boolean;
   age: number;
+  role: Role;
   created_at: Date;
   updated_at: Date;
 }
@@ -21,4 +23,5 @@ export interface IjwtDecoded extends JwtPayload {
   name: string;
   email: string;
   is_active: boolean;
+  role?: Role;
 }

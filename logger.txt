@@ -84,3 +84,71 @@ Method -> POST - Time -> 1779185905859 - URL -> /api/profiles
 Method -> DELETE - Time -> 1779185922776 - URL -> /api/users/3
 
 Method -> GET - Time -> 1779185936082 - URL -> /api/profiles/3
+
+Method -> GET - Time -> 1779186784400 - URL -> /api/users
+
+Method -> POST - Time -> 1779186794087 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779186823999 - URL -> /api/auth/login
+
+Method -> GET - Time -> 1779186834999 - URL -> /api/users
+
+Method -> GET - Time -> 1779187030654 - URL -> /api/users
+
+Method -> GET - Time -> 1779187062555 - URL -> /api/users
+
+Method -> GET - Time -> 1779187266567 - URL -> /api/users
+
+Method -> GET - Time -> 1779187483357 - URL -> /api/users
+
+Method -> GET - Time -> 1779187614037 - URL -> /api/users
+
+Method -> GET - Time -> 1779187640480 - URL -> /api/users
+
+Method -> POST - Time -> 1779187662909 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779187686243 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779187711684 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779187836897 - URL -> /api/auth/login
+
+Method -> GET - Time -> 1779187845422 - URL -> /api/users
+
+Method -> GET - Time -> 1779187882336 - URL -> /api/users
+
+Method -> GET - Time -> 1779187947555 - URL -> /api/users
+
+Method -> GET - Time -> 1779188027307 - URL -> /api/users
+
+Method -> GET - Time -> 1779188039367 - URL -> /
+
+Method -> GET - Time -> 1779188043375 - URL -> /api/users
+
+Method -> GET - Time -> 1779188043629 - URL -> /api/users
+
+Method -> GET - Time -> 1779188043757 - URL -> /favicon.ico
+
+Method -> POST - Time -> 1779191935917 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779192894770 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779193060037 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193104438 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193625173 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193629901 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779193636258 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193695471 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193759403 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193815527 - URL -> /api/auth/refresh-token
+
+Method -> POST - Time -> 1779193829402 - URL -> /api/auth/login
+
+Method -> POST - Time -> 1779193845308 - URL -> /api/auth/refresh-token

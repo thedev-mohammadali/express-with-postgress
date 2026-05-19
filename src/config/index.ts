@@ -9,6 +9,8 @@ const config = {
   connectionString: process.env.DATABASE_URL,
   port: process.env.PORT,
   secret: process.env.JWT_SECRET,
+  secret_refresh: process.env.JWT_SECRET_REFRESH,
+  tokenExpiry: process.env.EXPIER_IN as string,
 };
 
 export default config;

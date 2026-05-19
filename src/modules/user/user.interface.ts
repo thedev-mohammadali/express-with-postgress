@@ -1,9 +1,4 @@
-const roles = {
-  ADMIN: "admin",
-  USER: "user",
-} as const;
-
-type Role = (typeof roles)[keyof typeof roles];
+import type { Role } from "../../types";
 
 export interface IUser {
   name: string;

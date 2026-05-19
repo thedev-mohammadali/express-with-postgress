@@ -1,3 +1,4 @@
+import cookieParser from "cookie-parser";
 import express, { type Application } from "express";
 import { logger } from "./middleware/logger";
 import { authRoute } from "./modules/auth/auth.route";
@@ -6,6 +7,7 @@ import { userRoute } from "./modules/user/user.route";
 
 const app: Application = express();
 
+app.use(cookieParser());
 app.use(express.json());
 
 app.use(logger);
