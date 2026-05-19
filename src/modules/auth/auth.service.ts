@@ -39,11 +39,11 @@ const loginUserIntoDB = async (payload: ICredential) => {
   };
 
   const accessToken = jwt.sign(jwtPayload, config.secret as string, {
-    expiresIn: "1d",
+    expiresIn: config.tokenExpiry,
   });
 
   const refreshToken = jwt.sign(jwtPayload, config.secret_refresh as string, {
-    expiresIn: "2d",
+    expiresIn: config.rTokenExpiry,
   });
 
   return { accessToken, refreshToken };
@@ -83,7 +83,7 @@ const generateFreshToken = async (token: string) => {
   };
 
   const accessToken = jwt.sign(jwtPayload, config.secret as string, {
-    expiresIn: "1d",
+    expiresIn: config.tokenExpiry,
   });
 
   return { accessToken };
