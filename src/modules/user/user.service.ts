@@ -6,14 +6,24 @@ import type { IUser } from "./user.interface";
 const { getAllUsersQuery, createUserQuery, getUserByIdQuery } = queryString;
 
 const createUserIntoDB = async (payload: IUser) => {
-  const { name, age, email, password } = payload;
-
+  const { name, age, email, password, role } = payload;
+  let dataFromDb;
   //Password Hashing using bcrypt
-  bcrypt.genSalt(10, function (err, salt) {
-    bcrypt.hash(password, salt, async function (err, hash) {
-      await pool.query(createUserQuery, [name, email, hash, age]);
-    });
-  });
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(password, salt);
+  // bcrypt.genSalt(10, function (err, salt) {
+  //   bcrypt.hash(password, salt, async function (err, hash) {
+  //     dataFromDb = await pool.query(createUserQuery, [
+  //       name,
+  //       email,
+  //       hash,
+  //       age,
+  //       role,
+  //     ]);
+  //   });
+  // });
+
+  return await pool.query(createUserQuery, [name, email, hash, age, role]);
 };
 
 const getAllUsersFromDB = async () => {

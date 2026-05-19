@@ -3,9 +3,10 @@ const createUserTableQuery = `
         id SERIAL PRIMARY KEY,
         name VARCHAR(20),
         email VARCHAR(40) UNIQUE NOT NULL,
-        password VARCHAR(20) NOT NULL,
+        password TEXT NOT NULL,
         is_active BOOLEAN DEFAULT true,
         age INT,
+        role VARCHAR(10) DEFAULT 'user',
         created_at TIMESTAMP DEFAULT NOW(),
         updated_at TIMESTAMP DEFAULT NOW()
     )
@@ -29,8 +30,8 @@ const getAllUsersQuery = `
 `;
 
 const createUserQuery = `
-    INSERT INTO users (name, email, password, age)
-    VALUES($1, $2, $3, $4)
+    INSERT INTO users (name, email, password, age, role)
+    VALUES($1, $2, $3, $4, COALESCE($5, 'user'))
     RETURNING *
 `;
 

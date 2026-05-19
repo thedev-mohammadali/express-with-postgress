@@ -50,3 +50,37 @@ Method -> POST - Time -> 1779114152732 - URL -> /api/auth/login
 Method -> PUT - Time -> 1779114166669 - URL -> /api/users/19
 
 Method -> GET - Time -> 1779114171397 - URL -> /api/users
+
+Method -> GET - Time -> 1779114620142 - URL -> /api/users
+
+Method -> GET - Time -> 1779114620190 - URL -> /favicon.ico
+
+Method -> POST - Time -> 1779184894128 - URL -> /api/users
+
+Method -> POST - Time -> 1779185215124 - URL -> /api/users
+
+Method -> GET - Time -> 1779185226829 - URL -> /api/users
+
+Method -> POST - Time -> 1779185692424 - URL -> /api/users
+
+Method -> POST - Time -> 1779185711084 - URL -> /api/users
+
+Method -> POST - Time -> 1779185737631 - URL -> /api/auth/login
+
+Method -> GET - Time -> 1779185754444 - URL -> /api/users
+
+Method -> POST - Time -> 1779185787871 - URL -> /api/users
+
+Method -> GET - Time -> 1779185808586 - URL -> /api/users
+
+Method -> GET - Time -> 1779185816615 - URL -> /api/users
+
+Method -> GET - Time -> 1779185872947 - URL -> /api/users
+
+Method -> POST - Time -> 1779185895048 - URL -> /api/profiles
+
+Method -> POST - Time -> 1779185905859 - URL -> /api/profiles
+
+Method -> DELETE - Time -> 1779185922776 - URL -> /api/users/3
+
+Method -> GET - Time -> 1779185936082 - URL -> /api/profiles/3
